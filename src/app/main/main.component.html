@@ -1,0 +1,71 @@
+<mat-grid-list cols="2" rowHeight="600px">
+    <mat-grid-tile>
+        <mat-card class="example-card">
+            <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Shiba Inu</mat-card-title>
+            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+            <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+            </p>
+            </mat-card-content>
+            <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+        <mat-card class="example-card">
+            <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Shiba Inu</mat-card-title>
+            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+            <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+            </p>
+            </mat-card-content>
+            <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+            </mat-card-actions>
+        </mat-card>
+                  
+    </mat-grid-tile>
+</mat-grid-list>
+
+<mat-card class="example-card">
+        <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>http 통신예제</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <button mat-button (click)="Http()">http 통신클릭</button>
+
+            <div *ngFor="let data of dataArray.result_list">
+                {{(data.idx)}},
+                {{(data.title)}},
+                {{(data.create_date)}}
+            </div>
+            
+            <ag-grid-angular 
+                [pagination]="true"
+                [enableFilter]="true"
+                style="width: 400px; height: 500px;" 
+                class="ag-theme-balham"
+                [rowData]="dataArray.result_list" 
+                [columnDefs]="columnDefs">
+            </ag-grid-angular>
+        </mat-card-content>
+    </mat-card>
